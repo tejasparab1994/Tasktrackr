@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export PORT=5100
+export PORT=5108
 export MIX_ENV=prod
-export GIT_PATH=/home/memory/src/memory 
+export GIT_PATH=/home/tasks1/src/Tasktrackr 
 
 PWD=`pwd`
 if [ $PWD != $GIT_PATH ]; then
@@ -11,8 +11,8 @@ if [ $PWD != $GIT_PATH ]; then
 	exit 1
 fi
 
-if [ $USER != "memory" ]; then
-	echo "Error: must run as user 'memory'"
+if [ $USER != "tasks1" ]; then
+	echo "Error: must run as user 'tasks1'"
 	echo "  Current user is $USER"
 	exit 2
 fi
@@ -27,17 +27,17 @@ mkdir -p ~/www
 mkdir -p ~/old
 
 NOW=`date +%s`
-if [ -d ~/www/memory ]; then
-	echo mv ~/www/memory ~/old/$NOW
-	mv ~/www/memory ~/old/$NOW
+if [ -d ~/www/tasktracker ]; then
+	echo mv ~/www/tasktracker ~/old/$NOW
+	mv ~/www/tasktracker ~/old/$NOW
 fi
 
-mkdir -p ~/www/memory
-REL_TAR=~/src/memory/_build/prod/rel/memory/releases/0.0.1/memory.tar.gz
-(cd ~/www/memory && tar xzvf $REL_TAR)
+mkdir -p ~/www/tasktracker
+REL_TAR=~/src/Tasktrackr/_build/prod/rel/tasktracker/releases/0.0.1/tasktracker.tar.gz
+(cd ~/www/tasktracker && tar xzvf $REL_TAR)
 
 crontab - <<CRONTAB
-@reboot bash /home/memory/src/memory/start.sh
+@reboot bash /home/task1/src/tasktracker/start.sh
 CRONTAB
 
 #. start.sh
