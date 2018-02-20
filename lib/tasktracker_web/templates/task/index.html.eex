@@ -21,8 +21,8 @@
         </div>
         <div class="card-body">Description: <%= task.body %></div>
         <div class= "card-body">Completed: <strong><%= task.completed %></strong></div>
-        <div class="">
-
+        <div class="card-body">
+	     Time taken: <strong><%= task.time_taken %></strong>
         </div>
 
         <!--maybe button -->

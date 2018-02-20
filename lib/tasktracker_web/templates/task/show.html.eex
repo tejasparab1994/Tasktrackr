@@ -21,6 +21,11 @@
     <strong>Assigned to:</strong>
     <%= @task.user.name %>
   </li>
+ 
+  <li>
+    <strong>Time taken:</strong>
+    <%= @task.time_taken %>
+ </li>
 
 </ul>
 
