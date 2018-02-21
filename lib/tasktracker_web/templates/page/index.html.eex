@@ -10,7 +10,7 @@
 
       <div class="form-group text-center">
         <div class="card-body">
-          Name: <input type="text" name="fullname">
+          Name: <input type="text" name="name">
         </div>
 
       </div>
